@@ -75,6 +75,39 @@
 <script src="https://unpkg.com/jquery"></script>
 <script>
   // Add your code here!
+  "use strict";
+  $("img").addClass("image-center");
+  $("article>p").last().remove();
+  $("#title").css("font-size", Math.floor(Math.random()*100))
+  $("ol").append("<li>Joel is a chess grand master!</li>")
+  $("aside").empty().append("<p>Sorry for how silly the list was...</p>")
+  $(".form-control").on("change", changeBackground)
+  $(".form-control").get(0).on("change", getRedVal)
+  $(".form-control").get(1).on("change", getBlueVal)
+  $(".form-control").get(2).on("change", getGreenVal)
+
+  let redVal;
+  let blueVal;
+  let greenVal;
+
+  function getRedVal() {
+    redVal = this.val
+  }
+
+  function getBlueVal() {
+    blueVal = this.val
+  }
+
+  function getGreenVal() {
+    greenVal = this.val
+  }
+
+  function changeBackground() {
+    let formControl = $(".form-control").get()
+    console.log(formControl)
+    console.log(redVal)
+    $("body").css("background", "rgb($redInput.val(), $blueInput.val(), $greenInput.val())")
+  }
 </script>
 </body>
 
